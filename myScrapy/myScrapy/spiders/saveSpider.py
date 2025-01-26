@@ -1,28 +1,21 @@
 # -*- coding: UTF-8 -*-
 """
     @Project : MyScrapyLearn 
-    @File    : quoteSpider.py
+    @File    : saveSpider.py
     @IDE     : PyCharm 
     @Author  : XianZS
-    @Date    : 2025/1/25 21:04 
-    @NowThing: 
+    @Date    : 2025/1/26 14:05 
+    @NowThing: 保存 save 数据
 """
 import scrapy
 from ..items import MyscrapyItem
 
 
-class QuoteSpider(scrapy.Spider):
-    name = "quoteSpider"
+class SaveSpider(scrapy.Spider):
+    name = 'saveSpider'
     start_urls = [
         "https://quotes.toscrape.com"
     ]
-
-    @staticmethod
-    def __pr__(*args):
-        print("*" * 30)
-        for arg in args:
-            print(arg)
-            print("*" * 30)
 
     def parse(self, response, *args, **kwargs):
         items = MyscrapyItem()
@@ -35,6 +28,3 @@ class QuoteSpider(scrapy.Spider):
             items["author"] = author
             items["tags"] = tags
             yield items
-
-
-
