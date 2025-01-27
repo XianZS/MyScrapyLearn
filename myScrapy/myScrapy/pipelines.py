@@ -29,3 +29,4 @@ class MyscrapyPipeline:
             print("item:", item)
             print("e:", e)
         return item
+

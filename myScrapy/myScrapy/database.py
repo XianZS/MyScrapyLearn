@@ -9,7 +9,6 @@
 """
 import sqlite3
 
-
 class DataBase:
     """
     向外暴露数据库操作类 DataBase
@@ -32,6 +31,13 @@ class DataBase:
         self.curr = self.conn.cursor()
 
     def createTable(self, tableName, *args):
+        """
+        创建一个新的表
+
+        Args:
+            tableName (str): 表名
+            *args (str): 表的列名和数据类型，例如 "id INTEGER", "name TEXT"
+        """
         strs = f"create table if not exists {tableName} ({','.join(args)});"
         try:
             self.curr.execute(strs)
@@ -42,6 +48,13 @@ class DataBase:
             return False
 
     def insertTable(self, tableName, *args):
+        """
+        向表中插入数据
+
+        Args:
+            tableName (str): 表名
+            *args (str): 要插入的数据，例如 "1", "John Doe", "john.doe@example.com"
+        """
         args = [f"'{arg}'" for arg in args]
         # args = [f"'{arg}'" if isinstance(arg, str) else str(arg) for arg in args]
         strs = f"insert into {tableName} values({','.join(args)});"
@@ -51,11 +64,20 @@ class DataBase:
         self.conn.commit()
 
     def dropTable(self, tableName):
+        """
+        删除表
+
+        Args:
+            tableName (str): 要删除的表名
+        """
         strs = f"drop table {tableName};"
         print("strs : ", strs)
         self.curr.execute(strs)
 
     def close(self):
+        """
+        关闭数据库连接
+        """
         self.conn.close()
 
 
