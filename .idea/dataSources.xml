@@ -8,11 +8,18 @@
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/myScrapy/data/some.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="阿里云social数据库" uuid="1b00fa74-450b-42ec-bc4c-c9ec819da989">
+    <data-source source="LOCAL" name="MySql阿里云social数据库" uuid="1b00fa74-450b-42ec-bc4c-c9ec819da989">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://39.100.73.172:3306/social</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="MongoDB阿里云social数据库" uuid="f4696c1e-ebac-4780-9a3c-36f1a2968e87">
+      <driver-ref>mongo.4</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.dbschema.MongoJdbcDriver</jdbc-driver>
+      <jdbc-url>mongodb://39.100.73.172:27017/social</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

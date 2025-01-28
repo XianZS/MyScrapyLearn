@@ -6,9 +6,8 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
-import mysql.connector
 
 
-class MyscrapymysqlPipeline:
+class MyscrapymongodbPipeline:
     def process_item(self, item, spider):
         return item
